@@ -14,7 +14,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="flex flex-col h-screen justify-between bg-gray-900">
+  <div class="flex flex-col h-screen justify-between bg-main1">
     <NavBar />
     <router-view class="container max-w-8xl mx-auto mb-auto px-4" />
     <Footer />

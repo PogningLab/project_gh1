@@ -1,6 +1,6 @@
 <template>
   <!-- This example requires Tailwind CSS v2.0+ -->
-  <footer class="bg-gray-900">
+  <footer class="bg-main1">
     <div
       class="
         max-w-7xl
@@ -17,7 +17,7 @@
         <a
           target="_blank"
           href="https://github.com/uf4no"
-          class="text-gray-400 hover:text-gray-500"
+          class="text-plain hover:text-fill"
         >
           <span class="sr-only">GitHub</span>
           <svg
@@ -38,7 +38,6 @@
         <p class="text-center md:text-left text-base text-gray-400">
           &copy; 2023 by PogningLab
         </p>
-        
       </div>
     </div>
   </footer>

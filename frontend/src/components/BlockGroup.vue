@@ -1,6 +1,6 @@
 <template>
-	<section class="text-gray-400 bg-gray-900 body-font">
-		<div class="container px-5 py-24 mx-auto">
+	<section class="text-plain bg-main1 body-font">
+		<div class="container px-6 py-24 mx-auto bg-main1">
 			<div class="flex flex-wrap -m-4">
 				<Block />
 				<Block />
