@@ -34,7 +34,7 @@ Rename the `.env.example` file to `.env` and change the variables to the protoco
 
 ### How I built this project step-by-step
 
-Created new Vite project with `npm init vite@latest web3-template-vue `
+Created new Vite project with `npm init vite@latest frontend `
 
 Installed all dependenciess `npm install`
 

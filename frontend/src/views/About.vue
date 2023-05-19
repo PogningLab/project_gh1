@@ -12,14 +12,15 @@
 import { defineComponent } from 'vue'
 
 import { useWalletStore } from '../stores/wallet'
+import { Home } from '@material-ui/icons'
 
 export default defineComponent({
-  setup() {
-    const walletStore = useWalletStore()
-
-    return {
-      walletStore,
-    }
-  },
+    setup() {
+        const walletStore = useWalletStore();
+        return {
+            walletStore,
+        };
+    },
+    components: { Home }
 })
 </script>
