@@ -1,3 +1,7 @@
+/* import turner new bold cdn */
+@import url('https://fonts.cdnfonts.com/css/turner-new-bold');
+@import url('https://fonts.cdnfonts.com/css/chakra-petch');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

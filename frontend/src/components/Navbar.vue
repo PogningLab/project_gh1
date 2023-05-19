@@ -92,14 +92,14 @@
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <router-link
           :to="{ name: 'Home' }"
-          class="bg-main1 text-plain block px-3 py-2 rounded-md text-plain font-medium"
+          class="bg-main1 text-plain block px-3 py-2 rounded-md text-base font-medium"
           aria-current="page"
           >Home</router-link
         >
 
         <router-link
           :to="{ name: 'About' }"
-          class="bg-main1 text-plain block px-3 py-2 rounded-md text-plain font-medium"
+          class="bg-main1 text-plain block px-3 py-2 rounded-md text-base font-medium"
           aria-current="page"
           >About</router-link
         >
