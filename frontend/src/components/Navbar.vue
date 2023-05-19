@@ -1,6 +1,6 @@
 <template>
   <!-- This example requires Tailwind CSS v2.0+ -->
-  <nav class="bg-main1">
+  <nav>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <div class="flex">
@@ -67,7 +67,7 @@
           <div class="hidden md:ml-6 md:flex md:items-center md:space-x-4">
             <router-link
               :to="{ name: 'Home' }"
-              class="bg-main1 text-plain px-3 py-2 rounded-md text-sm font-medium"
+              class="text-plain px-3 py-2 rounded-md text-sm font-medium"
               aria-current="page"
               >Home</router-link
             >
@@ -92,14 +92,14 @@
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <router-link
           :to="{ name: 'Home' }"
-          class="bg-main1 text-plain block px-3 py-2 rounded-md text-base font-medium"
+          class="text-plain block px-3 py-2 rounded-md text-base font-medium"
           aria-current="page"
           >Home</router-link
         >
 
         <router-link
           :to="{ name: 'About' }"
-          class="bg-main1 text-plain block px-3 py-2 rounded-md text-base font-medium"
+          class="text-plain block px-3 py-2 rounded-md text-base font-medium"
           aria-current="page"
           >About</router-link
         >

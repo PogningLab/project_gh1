@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-screen justify-between bg-main1">
+  <div class="flex flex-col h-screen justify-between ">
     <NavBar />
     <router-view class="container max-w-8xl mx-auto mb-auto px-4" />
     <Footer />
@@ -11,7 +11,7 @@
   font-family: Chakra Petch, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #1B1C20;
 }
 </style>
 

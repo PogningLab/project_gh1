@@ -5,3 +5,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* back ground color */
+body {
+  background-color: #1B1C20;
+}

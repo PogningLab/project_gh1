@@ -1,6 +1,9 @@
 <template>
+  <div class="container max-w-8xl mx-auto mb-auto px-4">
     <BlockTitle />
-    <BlockGroup />
+    <BlockGroup :category="'Webtoons'" />
+    <BlockGroup :category="'Web Novels'" />
+  </div>
 </template>
 
 <script setup lang="ts">
