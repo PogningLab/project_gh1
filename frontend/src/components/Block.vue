@@ -6,14 +6,15 @@
     <div class="p-4">
       <h1 class="text-lg text-plain mb-3">웹툰 제목을 입력해주세요</h1>
       <div class="flex items-center">
-        <span class="text-plain inline-flex items-center leading-none text-sm">
-          <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-            <circle cx="12" cy="12" r="3"></circle>
-          </svg>1.2K
-        </span>
+        <div class="w-full">
+          <p class="text-xs font-medium text-plain">2/3 taken</p>
+          <div class="mt-2 overflow-hidden rounded-full bg-gray-600">
+            <div class="h-2 w-2/3 rounded-full bg-primary"></div>
+          </div>
+        </div>
       </div>
     </div>
+    
   </div>
 </router-link>
 </div>
