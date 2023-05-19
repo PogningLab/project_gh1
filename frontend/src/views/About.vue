@@ -8,19 +8,10 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { defineComponent } from 'vue'
 
 import { useWalletStore } from '../stores/wallet'
-import { Home } from '@material-ui/icons'
 
-export default defineComponent({
-    setup() {
-        const walletStore = useWalletStore();
-        return {
-            walletStore,
-        };
-    },
-    components: { Home }
-})
+const walletStore = useWalletStore();
 </script>
