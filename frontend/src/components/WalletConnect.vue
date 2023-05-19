@@ -28,31 +28,26 @@
     </svg>
     <span class="">{{
       walletStore.address != ''
-        ? `Connected Acc ${walletStore.acc_short}`
+        ? `Connected ${walletStore.acc_short}`
         : `Connect Wallet`
     }}</span>
   </button>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue'
 
 import { useWalletStore } from '../stores/wallet'
 
-export default defineComponent({
-  async mounted() {
-    await this.checkNetwork()
-  },
-  computed: {},
-  setup() {
     const walletStore = useWalletStore()
     const targetNetwork = import.meta.env.VITE_BLOCKCHAIN_NETWORK_NAME
     const targetNetworkId = import.meta.env.VITE_BLOCKCHAIN_NETWORK_ID
-    const network_ok = ref<boolean>(false)
-
+    const network_ok = ref<boolean>(true)
     // checks if current chain matches with the one provided in env variable
     const checkNetwork = async () => {
+			// @ts-expect-error Window.ethereum not typed
       if (window.ethereum) {
+				// @ts-expect-error Window.ethereum not typed
         const currentChainId = await window.ethereum.request({
           method: 'eth_chainId',
         })
@@ -62,38 +57,31 @@ export default defineComponent({
     }
     // switches network to the one provided in env variable
     const switchNetwork = async () => {
+			// @ts-expect-error Window.ethereum not typed
       await window.ethereum.request({
         method: 'wallet_switchEthereumChain',
         params: [{ chainId: targetNetworkId }],
       })
       // refresh
-      window.location.reload()
+      window.location.reload();
     }
     // checks network and connects wallet
     const connectWallet = async () => {
-      if (!network_ok.value) await switchNetwork()
+			console.log("test");
+      if (!network_ok.value) await switchNetwork();
       try {
         // @ts-expect-error Window.ethereum not typed
         const data = await window.ethereum.request({
           method: 'eth_requestAccounts',
         })
-        console.log('data :>> ', data)
-
-        walletStore.saveWalletData({ address: data[0] })
-        console.log('DApp connected to your wallet 💰')
+        console.log('data :>> ', data);
+        walletStore.saveWalletData({address: data[0], acc_short: data[0]});
+				console.log(`test`);
+				console.log(`test`,walletStore.address);
+        console.log('DApp connected to your wallet 💰');
       } catch (error) {
-        console.error('Error connecting DApp to your wallet')
-        console.error(error)
+        console.error('Error connecting DApp to your wallet');
+        console.error(error);
       }
     }
-    return {
-      connectWallet,
-      walletStore,
-      checkNetwork,
-      switchNetwork,
-      network_ok,
-      targetNetwork,
-    }
-  },
-})
 </script>
