@@ -15,6 +15,13 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/About.vue'),
   },
 
+	{
+    path: '/detail',
+    name: 'Detail',
+
+    component: () => import('../views/Detail.vue'),
+  },
+
   // TODO: for 404 errors
   // {
   //   path: '/:catchAll(.*)',
