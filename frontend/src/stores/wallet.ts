@@ -21,7 +21,19 @@ export const useWalletStore = defineStore('wallet', {
       this.acc_short = `${payload.address.slice(
         0,
         2
-      )}...${payload.address.slice(-4)}`
+      )}...${payload.address.slice(-4)}`;
+			localStorage.setItem('walletStore', JSON.stringify(this.$state));
+    },
+		loadWalletData() {
+      const data = localStorage.getItem('walletStore')
+      if (data) {
+        this.$state = JSON.parse(data)
+      }
+    },
+		clearWalletData() {
+      this.address = '',
+      this.acc_short = ''
+			localStorage.setItem('walletStore', JSON.stringify(this.$state));
     },
   },
 })
