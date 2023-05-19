@@ -4,7 +4,10 @@
         Join early and share the profits of creations
     </h2>
     <p class="text-plain md:text-lg">
-    Participate from the beginning and enjoy a portion of the profits from new creations. you can shape the creation's success and reap the rewards
+    Engage early to partake in the profits of emerging creations.
+    </p>
+    <p class="text-plain md:text-lg">
+    Influence their success and reap the rewards
     </p>
 </div>
 </template>
