@@ -1,16 +1,13 @@
 <template>
   <div class="pt-12 text-center">
-    <h1 class="text-2xl mb-8">This is the About page</h1>
-    <p v-if="walletStore.address != ''">
-      Your wallet address is: {{ walletStore.address }}
-    </p>
-    <p v-else>You've not connected your wallet yet</p>
+    <h1 class="text-2xl mb-8 text-plain">This is the About page</h1>
+    <Table />
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineComponent } from 'vue'
-
+import Table from '@/components/Table.vue'
 import { useWalletStore } from '../stores/wallet'
 
 const walletStore = useWalletStore();

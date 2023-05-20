@@ -1,7 +1,8 @@
 <template>
     <section class="text-plain">
-        <div class="container px-6 py-24 mx-auto">
-		<h2 class="text-plain text-2xl md:text-4xl font-bold mb-6">{{ category }}</h2>
+	
+        <div class="container px-6 py-16 mx-auto">
+		<h2 class="animate-fade-down animate-delay-500 animate-duration-1000 text-plain text-2xl md:text-4xl font-bold mb-6">{{ category }}</h2>
             <div class="flex flex-wrap -m-4">
                 <Block :imagePath="'../../webtoons/angel.jpeg'" />
                 <Block :imagePath="'../../webtoons/baseball.jpeg'" />
