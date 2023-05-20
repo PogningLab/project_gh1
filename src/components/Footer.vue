@@ -16,7 +16,7 @@
 
         <a
           target="_blank"
-          href="https://github.com/uf4no"
+          href="https://github.com/PogningLab/project_gh1"
           class="text-plain hover:text-fill"
         >
           <span class="sr-only">GitHub</span>
