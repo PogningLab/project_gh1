@@ -4,7 +4,7 @@
   <div class="bg-main1 h-full border border-gray-600 rounded-lg shadow-md overflow-hidden">
     <img class="lg:h-48 md:h-28 w-full object-cover object-center" :src="imagePath" alt="">
     <div class="p-4">
-      <h1 class="text-lg text-plain mb-3">웹툰 제목을 입력해주세요</h1>
+      <h1 class="text-lg text-plain mb-3">{{webtoonText}}</h1>
       <div class="flex items-center">
         <div class="w-full">
           <p class="text-xs font-medium text-plain">2/3 taken</p>
@@ -14,15 +14,15 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 </router-link>
 </div>
 </template>
 
-
 <script setup lang="ts">
 const props = defineProps({
-  imagePath: String
+  imagePath: String,
+	webtoonText: String
 })
 </script>
