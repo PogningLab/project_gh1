@@ -4,11 +4,11 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MyNFT is ERC721URIStorage, ERC721Royalty, Ownable {
+contract N42 is ERC721URIStorage, ERC721Royalty, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("NFTMarketplace", "MTK") {}
+    constructor() ERC721("Number42", "N42") {}
 
     function _baseURI() internal pure override returns (string memory) {
         return "ipfs://";
