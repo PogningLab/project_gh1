@@ -8,18 +8,17 @@ module.exports = {
         'plain': '#F0FBFF',
         'fill': '#FFFFFF',
         'primary': '#FF004F',
-        'primary2': '#7B68EE',
+        'primary2': '#E90064',
         'gradientStart': '#DC143C',
         'gradientEnd': '#FFE4E1',
       },
       fontFamily: {
-        // add turner new bold
         'turner': ['Turner New', 'sans-serif'],
         'chakra': ['Chakra Petch', 'sans-serif'],
       },
     },
   },
   plugins: [
-    require('tailwindcss-animated')
+    require('tailwindcss-animate'),
   ],
-}
+};

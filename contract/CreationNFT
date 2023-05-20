@@ -1,0 +1,78 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+
+contract CreationNFT is ERC721 {
+    struct NFT {
+        uint256 price;
+        uint256 ownershipPercentage;
+        uint256 totalQuantity;
+        uint256 remainingQuantity;
+        uint256 perUnitOwnershipPercentage;
+        uint256 levelOfParticipation;
+        uint256 deadline;
+        address payable creator;
+        uint256 resaleFeePercentage;
+    }
+
+    NFT[] public nfts;
+
+    constructor() ERC721("CreationNFT", "MNFT") {}
+
+    function createNFT(
+        address _to,
+        uint256 _tokenId,
+        uint256 _price,
+        uint256 _ownershipPercentage,
+        uint256 _totalQuantity,
+        uint256 _remainingQuantity,
+        uint256 _perUnitOwnershipPercentage,
+        uint256 _levelOfParticipation,
+        uint256 _deadline,
+        uint256 _resaleFeePercentage
+    ) public {
+        require(_totalQuantity > 0, "Total quantity must be greater than zero");
+        require(_remainingQuantity <= _totalQuantity, "Remaining quantity must be less than or equal to total quantity");
+        require(_perUnitOwnershipPercentage > 0, "Per unit ownership percentage must be greater than zero");
+        require(_levelOfParticipation > 0, "Level of participation must be greater than zero");
+        require(_deadline > block.timestamp, "Deadline must be greater than current time");
+
+        NFT memory newNFT = NFT({
+            price: _price,
+            ownershipPercentage: _ownershipPercentage,
+            totalQuantity: _totalQuantity,
+            remainingQuantity: _remainingQuantity,
+            perUnitOwnershipPercentage: _perUnitOwnershipPercentage,
+            levelOfParticipation: _levelOfParticipation,
+            deadline: _deadline,
+            creator: payable(msg.sender),
+            resaleFeePercentage: _resaleFeePercentage
+        });
+
+        nfts.push(newNFT);
+
+        _mint(_to, _tokenId);
+    }
+
+    function calculateResaleFee(uint256 _tokenId, uint256 _price) public view returns (uint256) {
+        NFT storage nft = nfts[_tokenId];
+        uint256 resaleFee = (_price * nft.resaleFeePercentage) / 100;
+        return resaleFee;
+    }
+
+    function transferFrom(address from, address to, uint256 tokenId) public override {
+        require(nfts[tokenId].deadline > block.timestamp, "Deadline has passed");
+        require(nfts[tokenId].remainingQuantity > 0, "No remaining quantity");
+
+        uint256 price = nfts[tokenId].price;
+        uint256 resaleFee = calculateResaleFee(tokenId, price);
+        uint256 transferValue = price - resaleFee;
+
+        nfts[tokenId].creator.transfer(resaleFee);
+
+        super.transferFrom(from, to, tokenId);
+
+        nfts[tokenId].price = transferValue;
+    }
+}
