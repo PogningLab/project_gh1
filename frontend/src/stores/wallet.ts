@@ -33,7 +33,7 @@ export const useWalletStore = defineStore('wallet', {
 		clearWalletData() {
       this.address = '',
       this.acc_short = ''
-			localStorage.setItem('walletStore', JSON.stringify(this.$state));
+			localStorage.removeItem('walletStore');
     },
   },
 })

@@ -16,18 +16,18 @@
 </style>
 
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { onMounted } from 'vue'
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
+import { useNftStore } from './stores/nft'
 import { useWalletStore } from './stores/wallet'
 
+const nftStore = useNftStore()
 const walletStore = useWalletStore()
 
 onMounted(() => {
-  // 이전에 저장한 상태를 불러옵니다.
-  walletStore.loadWalletData()
+  // nftStore.loadNftData();
+  walletStore.loadWalletData();
 	console.log("itstest");
 })
 </script>
